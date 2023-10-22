@@ -4,7 +4,7 @@
 from typing import Tuple
 
 
-def index_range(page: int, page_size: int) -> Tuple:
+def index_range(page: int, page_size: int) -> Tuple[int, int]:
     page_start = 0
     page_end = 0
 
