@@ -32,9 +32,9 @@ class LRUCache(BaseCaching):
             # get the least recently used key from self.ru
             keys = list(self.cache_data.keys())
             lru = keys[0]
-            for key, value in self.ru.items():
+            for k, value in self.ru.items():
                 if value < self.ru[lru]:
-                    lru = key
+                    lru = k
 
             # remove least recencly used key from self.cache_data and self.ru
             print('DISCARD: {}'.format(lru))
