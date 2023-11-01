@@ -19,7 +19,7 @@ class Config:
 
 app.config.from_object(Config)
 
-    
+ 
 @app.route('/')
 def hello() -> str:
     ''' render index.html template '''
