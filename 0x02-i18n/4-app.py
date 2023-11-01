@@ -2,7 +2,7 @@
 """A Basic Flask app.
 """
 from flask_babel import Babel
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 app.url_map.strict_slashes = False
@@ -24,7 +24,7 @@ app.config.from_object(Config)
 def get_locale():
     """dddd """
     locale = request.args.get('locale')
-    if locale:
+    if locale in ['en', 'fr']:
         return locale
     return request.accept_languages.best_match(app.config['LANGUAGES'])
 
@@ -32,7 +32,7 @@ def get_locale():
 @app.route('/')
 def hello() -> str:
     ''' render index.html template '''
-    return render_template('0-index.html')
+    return render_template('4-index.html')
 
 
 if __name__ == '__main__':
