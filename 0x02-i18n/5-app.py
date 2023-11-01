@@ -39,11 +39,11 @@ def get_locale():
 
 def get_user():
     """ get_user """
-    user = request.args.get('login_as')    
+    user = request.args.get('login_as')
     if user:
-        print(user)
         return users.get(int(user))
     return None
+
 
 @app.before_request
 def before_request():
